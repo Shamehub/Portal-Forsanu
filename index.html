@@ -2,23 +2,43 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Viewport penting agar koordinat sentuhan di HP akurat -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Portal Data Forsanu</title>
     <style>
-        body, html {
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            width: 100%;
             height: 100%;
-            overflow: hidden;
+            overflow: hidden; /* Mencegah double scrollbar */
+            background-color: #ffffff;
+        }
+        .iframe-container {
+            width: 100%;
+            height: 100%;
+            min-height: 100vh;
+            -webkit-overflow-scrolling: touch; /* Melancarkan scroll di Safari/iOS */
+            overflow-y: auto;
         }
         iframe {
             width: 100%;
             height: 100%;
             border: none;
+            display: block;
         }
     </style>
 </head>
 <body>
-    <iframe src="https://script.google.com/macros/s/AKfycbwZr2IiXdiMoqgSx56LLZOA2BMUxpgpiuA6Jg28PWXTxWVzSDPvrEuM-lteM9riWsIlsw/exec" allow="camera; microphone; clipboard-write"></iframe>
+    <div class="iframe-container">
+        <iframe 
+            src="https://script.google.com/macros/s/AKfycbwZr2IiXdiMoqgSx56LLZOA2BMUxpgpiuA6Jg28PWXTxWVzSDPvrEuM-lteM9riWsIlsw/exec" 
+            allow="camera; microphone; clipboard-write; geolocation"
+            sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts">
+        </iframe>
+    </div>
 </body>
 </html>
