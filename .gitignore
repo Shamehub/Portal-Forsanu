@@ -1,0 +1,7 @@
+# Abaikan semua file dengan ekstensi tertentu
+*Code.gs
+*autopush.bat
+*css.html
+*GaleriJs.html
+*index (script).html
+*Javascript.html
